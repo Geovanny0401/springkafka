@@ -5,9 +5,13 @@ import com.geovannycode.springkafka.dto.UserDto
 import com.geovannycode.springkafka.utils.TOPIC_NAME_THREE
 import com.geovannycode.springkafka.utils.TOPIC_NAME_TWO
 import org.springframework.kafka.core.KafkaTemplate
+import org.springframework.stereotype.Component
 
-class ExampleJsonProducer(private val exampleDtoKafkaTemplate: KafkaTemplate<String, ExampleDto>,
-                          private val userDtoKafkaTemplate: KafkaTemplate<String, UserDto>) {
+@Component
+class ExampleJsonProducer(
+    private val exampleDtoKafkaTemplate: KafkaTemplate<String, ExampleDto>,
+    private val userDtoKafkaTemplate: KafkaTemplate<String, UserDto>,
+) {
     fun sendExampleDtoMessage(dto: ExampleDto) {
         exampleDtoKafkaTemplate.send(TOPIC_NAME_TWO, dto)
     }
