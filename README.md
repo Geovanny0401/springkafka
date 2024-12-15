@@ -1,2 +1,2 @@
 # springkafka
-Example Kafka with Spring Boot and Kotlin
+Example demo of Kafka with Spring Boot and Kotlin 
